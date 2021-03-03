@@ -1,0 +1,36 @@
+@import "variables";
+
+.app {
+  background-color: $black;
+  padding: 0 50px;
+}
+
+.text {
+  &-white {
+    color: $white;
+  }
+
+  &-red {
+    color: $red;
+  }
+
+  &-grey {
+    color: $grey;
+  }
+
+  &-grey-2 {
+    color: $grey-2;
+  }
+}
+
+.flex {
+  display: flex;
+}
+
+.between {
+  justify-content: space-between;
+}
+
+.uppercase {
+  text-transform: uppercase;
+}

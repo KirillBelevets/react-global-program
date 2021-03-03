@@ -12,6 +12,11 @@ module.exports = {
         compress: true,
         port: 9000,
     },
+    resolve: {
+        alias: {
+            assets: path.join(__dirname, 'src', 'assets')
+        }
+    },
     module: {
         rules: [
             {
@@ -23,6 +28,17 @@ module.exports = {
                         presets: ['@babel/preset-env']
                     }
                 }
+            },
+            {
+                test: /\.s[ac]ss$/i,
+                use: [
+                    // Creates `style` nodes from JS strings
+                    "style-loader",
+                    // Translates CSS into CommonJS
+                    "css-loader",
+                    // Compiles Sass to CSS
+                    "sass-loader",
+                ],
             },
             {
                 test: /\.css$/i,

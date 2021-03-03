@@ -1,0 +1,53 @@
+@import "../variables";
+
+.movie-count {
+  font-weight: bold;
+  margin-right: 5px;
+
+  &-wrapper {
+    color: $white;
+    font-size: 20px;
+    padding: 25px 0;
+  }
+}
+
+.movie-list {
+  flex-wrap: wrap;
+
+  .movie-item {
+    width: 30%;
+    flex-grow: 1;
+    margin-bottom: 60px;
+
+    &:not(:nth-of-type(3n)) {
+      margin-right: 50px;
+    }
+
+    .movie-image {
+      margin-bottom: 20px;
+      height: 850px;
+      background-size: cover;
+      background-position: center;
+    }
+
+    .movie-info {
+      justify-content: space-between;
+      color: transparentize($white, 0.25);
+
+      .release-date {
+        border: 1px solid transparentize($white, 0.25);
+        border-radius: 3px;
+        padding: 2px 8px;
+      }
+    }
+
+    .movie-title {
+      font-size: 20px;
+      margin-bottom: 10px;
+    }
+
+    .movie-genre {
+      font-size: 15px;
+    }
+  }
+}
