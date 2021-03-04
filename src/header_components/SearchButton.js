@@ -4,7 +4,7 @@ import './header.scss'
 export default function SearchButton() {
     return (
         <div>
-            <button className="search-button uppercase">Search</button>
+            <button className="search-button text-uppercase">Search</button>
         </div>
     )
 }

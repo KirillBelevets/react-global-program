@@ -5,7 +5,7 @@ import './menu.scss';
 
 const Menu = () => {
     return (
-        <div className="menu flex">
+        <div className="menu display-flex">
             <ResultFilter/>
             <ResultSort/>
         </div>

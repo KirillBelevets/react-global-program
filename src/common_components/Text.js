@@ -10,5 +10,8 @@ export default function Text ({value}) {
 }
 
 Text.propTypes = {
-    value: PropTypes.string.isRequired
+    value: PropTypes.oneOfType([
+        PropTypes.string,
+        PropTypes.number,
+    ])
 }

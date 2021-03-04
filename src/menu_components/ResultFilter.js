@@ -2,7 +2,7 @@ import React from 'react'
 
 const ResultFilter = () => {
     return (
-        <div className="genre-filter uppercase text-white flex">
+        <div className="genre-filter text-uppercase text-white display-flex">
             <div className="genre-filter-item genre-filter-item--active">All</div>
             <div className="genre-filter-item">Comedy</div>
             <div className="genre-filter-item">Horror</div>

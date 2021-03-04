@@ -1,0 +1,46 @@
+{
+  "moviesData": [
+    {
+      "title": "Titanic",
+      "genre": "Drama",
+      "year": 1997,
+      "image": "Titanic.jpg",
+      "key": "1997a"
+    },
+    {
+      "title": "Lion King",
+      "genre": "Cartoon",
+      "year": 1994,
+      "image": "LionKing.jpg",
+      "key": "1994a"
+    },
+    {
+      "title": "The Godfather",
+      "genre": "Crime, Drama",
+      "year": 1972,
+      "image": "Godfather.jpg",
+      "key": "1972a"
+    },
+    {
+      "title": "Forrest Gump",
+      "genre": "Drama, Romance",
+      "year": 1994,
+      "image": "ForrestGump.jpg",
+      "key": "1994b"
+    },
+    {
+      "title": "Gladiator",
+      "genre": "Action, Drama",
+      "year": 2000,
+      "image": "Gladiator.jpg",
+      "key": "2000a"
+    },
+    {
+      "title": "The Green Mile",
+      "genre": "Crime, Drama",
+      "year": 1999,
+      "image": "GreenMile.jpg",
+      "key": "1999a"
+    }
+  ]
+}

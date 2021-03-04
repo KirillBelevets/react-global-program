@@ -5,7 +5,7 @@ import AddMovie from "./AddMovie";
 const Header = () => {
     return (
         <header>
-            <div className="flex between">
+            <div className="display-flex content-justify-between">
                 <div className="text-red logo">Netflix</div>
                 <AddMovie/>
             </div>

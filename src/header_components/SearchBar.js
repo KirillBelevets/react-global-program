@@ -7,10 +7,10 @@ const searchBar = () => {
 
     return (
         <div className="search-bar-wrapper">
-            <div className="search-bar-label text-white uppercase">
+            <div className="search-bar-label text-white text-uppercase">
                 Find your movie
             </div>
-            <div className="search-bar flex">
+            <div className="search-bar display-flex">
                 <input type="text" className="text-grey-2" placeholder="What do you want to watch?"/>
                 <SearchButton />
             </div>

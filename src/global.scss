@@ -21,16 +21,16 @@
   &-grey-2 {
     color: $grey-2;
   }
+
+  &-uppercase {
+    text-transform: uppercase;
+  }
 }
 
-.flex {
+.display-flex {
   display: flex;
 }
 
-.between {
+.content-justify-between {
   justify-content: space-between;
-}
-
-.uppercase {
-  text-transform: uppercase;
 }
