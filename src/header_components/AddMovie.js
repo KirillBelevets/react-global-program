@@ -5,7 +5,7 @@ export default function AddMovie() {
 
     return (
         <div>
-            <button className="add-movie text-uppercase">+ Add Movie</button>
+            <button className="add-movie text-uppercase cursor-pointer">+ Add Movie</button>
         </div>
     )
 }

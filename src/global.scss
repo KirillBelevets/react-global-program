@@ -1,5 +1,9 @@
 @import "variables";
 
+* {
+  font-family: Montserrat;
+}
+
 .app {
   background-color: $black;
   padding: 0 50px;
@@ -29,6 +33,12 @@
 
 .display-flex {
   display: flex;
+}
+
+.cursor-pointer {
+  &:hover {
+   cursor: pointer;
+  }
 }
 
 .content-justify-between {
