@@ -6,7 +6,7 @@
   "scripts": {
     "test": "jest",
     "build:prod": "cross-env NODE_ENV=production webpack",
-    "start:dev": "cross-env NODE_ENV=development webpack serve"
+    "start:dev": "cross-env NODE_ENV=development webpack serve --open"
   },
   "repository": {
     "type": "git",
@@ -43,6 +43,7 @@
     "webpack-dev-server": "^3.11.2"
   },
   "dependencies": {
-    "react-dom": "^17.0.1"
+    "react-dom": "^17.0.1",
+    "react-router-dom": "^5.2.0"
   }
 }

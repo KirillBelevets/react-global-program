@@ -4,11 +4,15 @@ import MovieImage from "./MovieImage";
 import MovieTitle from "./MovieTitle";
 import MovieGenre from "./MovieGenre";
 import MovieReleaseDate from "./MovieReleaseDate";
+import Options from "./Options";
 
 export default function MovieItem({title, genre, year, image}) {
     return (
         <div className="movie-item">
-            <MovieImage image={image}/>
+            <div className="movie-img-container">
+                <MovieImage image={image}/>
+                <Options />
+            </div>
             <div className="movie-info display-flex">
                 <div className="movie-description">
                     <MovieTitle title={title}/>

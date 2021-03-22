@@ -1,0 +1,87 @@
+@import "../variables";
+
+header {
+  border-bottom: 10px solid $grey-2;
+  position: relative;
+  overflow: hidden;
+  background: transparentize($black, 0.5);
+  padding: 50px;
+
+  .logo {
+    font-size: 30px;
+    z-index: 200;
+  }
+
+  .header-overlay {
+    position: absolute;
+    background: url('~assets/bg.jpg');
+    top: 0;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    filter: blur(5px);
+    z-index: -1;
+  }
+
+  .add-movie {
+    color: $red;
+    background-color: transparentize($white, 0.75);
+    font-size: 18px;
+    height: 50px;
+    width: 200px;
+    border: none;
+    border-radius: 5px;
+  }
+
+  .search-bar {
+    &-wrapper {
+      padding: 60px 100px;
+      width: 100em;
+    }
+
+    &-label {
+      font-size: 40px;
+      margin-bottom: 30px;
+    }
+
+    input {
+      font-size: 20px;
+      border: none;
+      height: 60px;
+      margin-right: 10px;
+      flex-grow: 1;
+      background: transparentize($black, 0.25);
+      border-radius: 5px;
+    }
+
+    input[type="text"] {
+      padding-left: 20px;
+    }
+
+    .search-button {
+      font-size: 18px;
+      color: $white;
+      background-color: $red;
+      height: 60px;
+      width: 250px;
+      border: none;
+      border-radius: 5px;
+    }
+  }
+}
+
+.footer {
+  padding: 50px;
+  background: $grey-2;
+  text-align: center;
+  width: 100%;
+  border:0px;
+  outline:0px;
+  z-index: 200;
+
+  .logo {
+    font-size: 30px;
+    text-align: center;
+    z-index: 200;
+  }
+}

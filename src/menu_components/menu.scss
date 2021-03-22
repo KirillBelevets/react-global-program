@@ -31,9 +31,16 @@
     &-label {
       margin-right: 30px;
     }
+
+    &-dropdown {
+      background-color: $black;
+      width: 200px;
+      border: none;
+    }
+
   }
 
-  .genre-filter, .result-sort {
+  .genre-filter, .result-sort, .result-sort-dropdown {
     font-size: 20px;
   }
 }

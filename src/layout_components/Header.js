@@ -1,15 +1,12 @@
 import React from 'react'
-import SearchBar from './SearchBar'
-import AddMovie from "./AddMovie";
 
-const Header = () => {
+const Header = (props) => {
     return (
         <header>
             <div className="display-flex content-justify-between">
                 <div className="text-red logo">Netflix</div>
-                <AddMovie/>
+            {props.children}
             </div>
-            <SearchBar/>
             <div className="header-overlay" />
         </header>
     )
