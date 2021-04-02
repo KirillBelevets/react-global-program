@@ -105,3 +105,60 @@
     }
   }
 }
+
+.movie-details {
+  margin-top: 50px;
+
+  &-image img {
+    max-width: 250px;
+  }
+
+  &-information-block {
+    padding-left: 10rem;
+  }
+
+  &-title {
+    padding-top: 3rem;
+    padding-bottom: 0.5rem;
+    font-size: 3rem;
+
+    &-rating {
+      padding: 20px;
+      border: 1px solid white;
+      color: green;
+      border-radius: 50%;
+      font-size: 2rem;
+    }
+  }
+
+  &-genre {
+    padding-top: 1rem;
+    font-size: 0.9rem;
+  }
+
+  &-info {
+    padding-top: 1rem;
+    color: $red;
+    font-size: 2rem;
+  }
+
+  &-time {
+    padding-left: 30px;
+  }
+
+  &-description {
+    padding-top: 2rem;
+    width: 85rem;
+    padding-right: 15rem;
+  }
+
+  &-btn-close button {
+    background-color: transparent;
+    color: $red;
+    border:none;
+    font-size: 2rem;
+    position: absolute;
+    top: 3rem;
+    right: 10rem;
+  }
+}

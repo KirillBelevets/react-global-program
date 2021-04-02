@@ -6,7 +6,9 @@ export default function EditMovie({edit, setEdit}) {
     return (
         <>
             <Modal show={edit} title="Edit Movie" onClose={() => setEdit(false)}>
-                <MovieForm/>
+                <label className="modal-label">movie id</label>
+                <input type="text" className="modal-input" id="movie_id"/>
+                <MovieForm buttonSubmitText={'save'}/>
             </Modal>
         </>
     )

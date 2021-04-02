@@ -3,7 +3,7 @@ import MovieItem from "./MovieItem"
 import ResultCount from "./ResultCount"
 import movies from './movies.json'
 
-export default function MovieList() {
+export default function MovieList({headerState, setHeaderState}) {
     return (
         <>
             <ResultCount amount={movies.moviesData.length}/>
@@ -14,7 +14,10 @@ export default function MovieList() {
                         genre={movie.genre}
                         year={movie.year}
                         image={movie.image}
-                        key={movie.key}
+                        key={movie.id}
+                        movieId={movie.id}
+                        headerState={headerState}
+                        setHeaderState={setHeaderState}
                     />
                 ))}
             </div>

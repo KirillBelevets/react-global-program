@@ -5,42 +5,60 @@
       "genre": "Drama",
       "year": 1997,
       "image": "Titanic.jpg",
-      "key": "1997a"
+      "id": "1997a",
+      "description": "Titanic is a 1997 American epic romantic disaster movie. It was directed, written, and co-produced by James Cameron. The movie is about the 1912 sinking of the RMS Titanic. It stars Kate Winslet and Leonardo DiCaprio. The two play characters who are of different social classes. They fall in love after meeting aboard the ship, but it was not good for a rich girl to fall in love with a poor boy in 1912. Titanic ran for 200 days in cinemas. Production of the movie began in 1995. Cameron recorded footage of the real Titanic wreck. The reconstruction of the Titanic was created at Playas de Rosarito in Baja California. To create the sinking of the ship, scale models and computer-generated imagery were used. Paramount Pictures and 20th Century Fox helped with half of the funding for the movie. At the time when the movie was released, it was the most expensive movie ever made. It had a budget of $200 million.",
+      "rating": 9.5,
+      "time": 194
     },
     {
       "title": "Lion King",
       "genre": "Cartoon",
       "year": 1994,
       "image": "LionKing.jpg",
-      "key": "1994a"
+      "id": "1994a",
+      "description": "The Lion King is a 1994 American animated musical drama film produced by Walt Disney Feature Animation and released by Walt Disney Pictures. It is the 32nd Disney animated feature film, and the fifth animated film produced during a period known as the Disney Renaissance. The Lion King was directed by Roger Allers and Rob Minkoff, produced by Don Hahn, and has a screenplay credited to Irene Mecchi, Jonathan Roberts, and Linda Woolverton. Its original songs were written by composer Elton John and lyricist Tim Rice, with a score by Hans Zimmer.",
+      "rating": 9.3,
+      "time": 88
     },
     {
       "title": "The Godfather",
       "genre": "Crime, Drama",
       "year": 1972,
       "image": "Godfather.jpg",
-      "key": "1972a"
+      "id": "1972a",
+      "description": "The Godfather is a 1972 American crime film directed by Francis Ford Coppola, who co-wrote the screenplay with Mario Puzo, based on Puzo's best-selling 1969 novel of the same name. The film stars Marlon Brando, Al Pacino, James Caan, Richard Castellano, Robert Duvall, Sterling Hayden, John Marley, Richard Conte, and Diane Keaton. It is the first installment in The Godfather trilogy. The story, spanning from 1945 to 1955, chronicles the Corleone family under patriarch Vito Corleone (Brando), focusing on the transformation of his youngest son, Michael Corleone (Pacino), from reluctant family outsider to ruthless mafia boss.",
+      "rating": 9.4,
+      "time": 175
     },
     {
       "title": "Forrest Gump",
       "genre": "Drama, Romance",
       "year": 1994,
       "image": "ForrestGump.jpg",
-      "key": "1994b"
+      "id": "1994b",
+      "description": "Forrest Gump is a 1994 American comedy-drama film directed by Robert Zemeckis and written by Eric Roth. It is based on the 1986 novel of the same name by Winston Groom and stars Tom Hanks, Robin Wright, Gary Sinise, Mykelti Williamson and Sally Field. The story depicts several decades in the life of Forrest Gump (Hanks), a slow-witted but kind-hearted man from Alabama who witnesses and unwittingly influences several defining historical events in the 20th century United States. The film differs substantially from the novel.",
+      "rating": 9.5,
+      "time": 142
     },
     {
       "title": "Gladiator",
       "genre": "Action, Drama",
       "year": 2000,
       "image": "Gladiator.jpg",
-      "key": "2000a"
+      "id": "2000a",
+      "description": "Gladiator is a 2000 epic historical drama film directed by Ridley Scott and written by David Franzoni, John Logan, and William Nicholson. The film was co-produced and released by DreamWorks Pictures and Universal Pictures. It stars Russell Crowe, Joaquin Phoenix, Connie Nielsen, Ralf Möller, Oliver Reed (in his final role), Djimon Hounsou, Derek Jacobi, John Shrapnel, and Richard Harris. Crowe portrays Roman general Maximus Decimus Meridius, who is betrayed when Commodus, the ambitious son of Emperor Marcus Aurelius, murders his father and seizes the throne. Reduced to slavery, Maximus becomes a gladiator and rises through the ranks of the arena to avenge the murders of his family and his emperor.",
+      "rating": 9.3,
+      "time": 155
     },
     {
       "title": "The Green Mile",
       "genre": "Crime, Drama",
       "year": 1999,
       "image": "GreenMile.jpg",
-      "key": "1999a"
+      "id": "1999a",
+      "description": "The Green Mile is a 1999 American fantasy drama film written and directed by Frank Darabont and based on Stephen King's 1996 novel of the same name. It stars Tom Hanks as a death row corrections officer during the Great Depression who witnesses supernatural events that occur after an enigmatic inmate (Michael Clarke Duncan) is brought to his facility. David Morse, Bonnie Hunt, Doug Hutchison and James Cromwell appear in supporting roles.",
+      "rating": 9.4,
+      "time": 189
     }
   ]
 }

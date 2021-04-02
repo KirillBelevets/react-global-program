@@ -11,7 +11,7 @@ export default function AddMovie() {
             <button className="add-movie text-uppercase cursor-pointer" onClick={() => setShow(true)}>+ Add Movie
             </button>
             <Modal show={show} onClose={() => setShow(false)} title="Add Movie">
-                <MovieForm/>
+                <MovieForm buttonSubmitText={'submit'}/>
             </Modal>
         </div>
     )

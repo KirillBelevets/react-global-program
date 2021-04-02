@@ -17,7 +17,6 @@ export default function Options() {
             {edit ?
                 <EditModal edit={edit} setEdit={setEdit}/>
                 : null}
-            }
             {delModal ?
                 <DeleteModal delModal={delModal} setDelModal={setDelModal}/>
                 : null}

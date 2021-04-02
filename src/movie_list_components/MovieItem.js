@@ -6,11 +6,11 @@ import MovieGenre from "./MovieGenre";
 import MovieReleaseDate from "./MovieReleaseDate";
 import Options from "./Options";
 
-export default function MovieItem({title, genre, year, image}) {
+export default function MovieItem({movieId, title, genre, year, image, headerState, setHeaderState}) {
     return (
         <div className="movie-item">
             <div className="movie-img-container">
-                <MovieImage image={image}/>
+                <MovieImage image={image} headerState={headerState} setHeaderState={setHeaderState} movieId={movieId}/>
                 <Options />
             </div>
             <div className="movie-info display-flex">

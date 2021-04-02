@@ -13,7 +13,8 @@ module.exports = {
     ],
     resolve: {
         alias: {
-            assets: path.join(__dirname, 'src', 'assets')
+            assets: path.join(__dirname, 'src', 'assets'),
+            src: path.join(__dirname, 'src')
         }
     },
     module: {

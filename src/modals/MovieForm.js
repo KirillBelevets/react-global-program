@@ -1,7 +1,7 @@
 import React from 'react'
 import '../global.scss'
 
-export default function MovieForm(props) {
+export default function MovieForm({buttonSubmitText}) {
 
 
     return (
@@ -24,6 +24,10 @@ export default function MovieForm(props) {
                 <input className="modal-input" type="text" id="movie_overview"/>
                 <label className="modal-label">runtime</label>
                 <input className="modal-input" type="text" id="movie_runtime"/>
+                <div className="btn-wrapper display-flex">
+                    <button className="btn btn-reset text-uppercase">reset</button>
+                    <button className="btn btn-submit text-uppercase">{buttonSubmitText}</button>
+                </div>
             </form>
         </div>
     )

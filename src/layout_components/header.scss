@@ -4,7 +4,7 @@ header {
   border-bottom: 10px solid $grey-2;
   position: relative;
   overflow: hidden;
-  background: transparentize($black, 0.5);
+  background: transparentize($black, 0.25);
   padding: 50px;
 
   .logo {
@@ -50,7 +50,7 @@ header {
       height: 60px;
       margin-right: 10px;
       flex-grow: 1;
-      background: transparentize($black, 0.25);
+      background: transparentize($black, 0.2);
       border-radius: 5px;
     }
 

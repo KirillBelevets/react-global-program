@@ -57,3 +57,32 @@
   align-self: center;
   width: 50%;
 }
+
+.btn-wrapper {
+  font-size: 1.5rem;
+  padding-top: 3rem;
+  justify-content: flex-end;
+
+  .btn {
+    padding: 15px 20px;
+    border-radius: 5px;
+    min-width: 150px;
+
+    &:not(:last-child) {
+      margin-right: 10px;
+    }
+
+    &-reset {
+      color: $red;
+      border: 1px solid $red;
+      background-color: transparent;
+    }
+
+    &-submit {
+      background-color: $red;
+      color: $white;
+      border: none;
+    }
+  }
+
+}
