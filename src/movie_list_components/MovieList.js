@@ -1,14 +1,13 @@
 import React from 'react'
 import MovieItem from "./MovieItem"
 import ResultCount from "./ResultCount"
-import movies from './movies.json'
 
-export default function MovieList({headerState, setHeaderState}) {
+export default function MovieList({headerState, setHeaderState, movieList}) {
     return (
         <>
-            <ResultCount amount={movies.moviesData.length}/>
+            <ResultCount amount={movieList.length}/>
             <div className="movie-list display-flex">
-                {movies.moviesData.map((movie) => (
+                {movieList.map((movie) => (
                     <MovieItem
                         title={movie.title}
                         genre={movie.genre}
