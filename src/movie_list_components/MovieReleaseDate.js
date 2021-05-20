@@ -12,5 +12,5 @@ export default function MovieReleaseDate ({year}){
 }
 
 MovieReleaseDate.propTypes = {
-    year: PropTypes.number.isRequired
+    year: PropTypes.string.isRequired
 }

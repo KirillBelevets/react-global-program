@@ -6,20 +6,21 @@ import MovieGenre from "./MovieGenre";
 import MovieReleaseDate from "./MovieReleaseDate";
 import Options from "./Options";
 
-export default function MovieItem({movieId, title, genre, year, image, headerState, setHeaderState}) {
+export default function MovieItem({movie, headerState, setHeaderState}) {
     return (
         <div className="movie-item">
             <div className="movie-img-container">
-                <MovieImage image={image} headerState={headerState} setHeaderState={setHeaderState} movieId={movieId}/>
-                <Options />
+                <MovieImage image={movie.poster_path} headerState={headerState} setHeaderState={setHeaderState}
+                            movieId={movie.id}/>
+                <Options movie={movie}/>
             </div>
             <div className="movie-info display-flex">
                 <div className="movie-description">
-                    <MovieTitle title={title}/>
-                    <MovieGenre genre={genre}/>
+                    <MovieTitle title={movie.title}/>
+                    <MovieGenre genre={movie.genres}/>
                 </div>
                 <div>
-                    <MovieReleaseDate year={year}/>
+                    <MovieReleaseDate year={movie.release_date}/>
                 </div>
             </div>
         </div>
@@ -27,8 +28,10 @@ export default function MovieItem({movieId, title, genre, year, image, headerSta
 }
 
 MovieItem.propType = {
-    title: PropTypes.string.isRequired,
-    genre: PropTypes.string.isRequired,
-    year: PropTypes.number.isRequired,
-    image: PropTypes.string.isRequired,
+    movie: {
+        title: PropTypes.string.isRequired,
+        genre: PropTypes.string.isRequired,
+        year: PropTypes.number.isRequired,
+        image: PropTypes.string.isRequired,
+    }
 }

@@ -4,9 +4,7 @@ import SearchBar from "./SearchBar";
 import MovieDetails from "../movie_list_components/pages/MovieDetails";
 import AddMovie from "./AddMovie";
 
-const Header = ({headerState, setHeaderState}) => {
-
-
+const Header = ({headerState, setHeaderState, movieList}) => {
 
     return (
         <header>
@@ -21,7 +19,7 @@ const Header = ({headerState, setHeaderState}) => {
                 }
             </div>
             {
-                headerState && <MovieDetails headerState={headerState} setHeaderState={setHeaderState}/>
+                headerState && <MovieDetails headerState={headerState} setHeaderState={setHeaderState} movieList={movieList}/>
             }
             <div className="header-overlay"/>
         </header>

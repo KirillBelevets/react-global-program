@@ -1,9 +1,12 @@
 import React from 'react'
 import {moviesSortTypes} from '../common_components/App'
+import {bindActionCreators} from "redux"
+import {sortBy} from "../store/actions"
+import {connect} from "react-redux"
 
-export default function ResultSort({setSortType}) {
+function ResultSort({sortBy}) {
     function changeSort(option) {
-        setSortType(option.target.value)
+        sortBy(option.target.value)
     }
 
     return (
@@ -12,15 +15,20 @@ export default function ResultSort({setSortType}) {
             <div className="result-sort-dropdown text-uppercase display-flex">
                 <select onChange={changeSort} defaultValue={moviesSortTypes.year}
                         className="result-sort-dropdown text-uppercase display-flex text-white">
-                    <option value={moviesSortTypes.year}
+                    <option value="release_date"
                             className="text-white">Release Date
                     </option>
-                    <option value={moviesSortTypes.rating}
+                    <option value="vote_average"
                             className="text-white">Rating
                     </option>
-                    {/*<i className="dropdown icon text-red"/>*/}
                 </select>
             </div>
         </div>
     )
 }
+
+function mapDispatchToProps(dispatch) {
+    return bindActionCreators({sortBy: sortBy}, dispatch)
+}
+
+export default connect(null, mapDispatchToProps)(ResultSort)

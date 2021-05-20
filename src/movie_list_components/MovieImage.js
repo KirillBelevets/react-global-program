@@ -1,12 +1,11 @@
-import React, {useState} from 'react'
+import React from 'react'
 import PropTypes from 'prop-types'
 import './movie.scss'
 
-export default function MovieImage({image, headerState, setHeaderState, movieId}) {
-    const img = require(`./movie_images/${image}`)
-
+export default function MovieImage({image, setHeaderState, movieId}) {
     return (
-        <div onClick={() => setHeaderState(movieId)} className="movie-image" style={{ backgroundImage: `url(${img})` }} />
+        <div onClick={() => setHeaderState(movieId)} className="movie-image"
+             style={{backgroundImage: `url(${image})`}}/>
     )
 }
 

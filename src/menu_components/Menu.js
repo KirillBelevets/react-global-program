@@ -3,11 +3,11 @@ import ResultFilter from "./ResultFilter";
 import ResultSort from "./ResultSort";
 import './menu.scss';
 
-const Menu = ({setSortType}) => {
+const Menu = () => {
     return (
         <div className="menu display-flex">
             <ResultFilter/>
-            <ResultSort setSortType={setSortType}/>
+            <ResultSort/>
         </div>
     )
 }

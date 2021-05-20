@@ -2,13 +2,11 @@ import React from 'react'
 import Modal from "./Modal";
 import MovieForm from "./MovieForm";
 
-export default function EditMovie({edit, setEdit}) {
+export default function EditMovie({movie, showForm, setToggleShowForm}) {
     return (
         <>
-            <Modal show={edit} title="Edit Movie" onClose={() => setEdit(false)}>
-                <label className="modal-label">movie id</label>
-                <input type="text" className="modal-input" id="movie_id"/>
-                <MovieForm buttonSubmitText={'save'}/>
+            <Modal show={showForm} title="Edit Movie" onClose={() => setToggleShowForm(!showForm)}>
+                <MovieForm movie={movie} buttonSubmitText={'save'}/>
             </Modal>
         </>
     )
