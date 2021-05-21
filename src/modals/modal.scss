@@ -38,7 +38,16 @@
     border: none;
     border-radius: 5px;
     padding-left: 10px;
-    color: $white
+    color: $white;
+
+    &-select {
+      height: auto;
+      background-color: $grey;
+      color: $white;
+      border: none;
+      border-radius: 5px;
+      width: 100%;
+    }
   }
 
   .button-close {

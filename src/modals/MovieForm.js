@@ -1,92 +1,91 @@
-import React, {useState} from 'react'
+import React from 'react'
 import '../global.scss'
 import {bindActionCreators} from "redux"
 import {postMovie, saveEditMovie} from "../store/actions"
 import {connect} from "react-redux"
+import {Form, Formik, Field, ErrorMessage} from 'formik'
+import * as Yup from 'yup'
 
 function MovieForm({movie = null, buttonSubmitText, postMovie, saveEditMovie}) {
-    const [movieFormData, setMovieFormData] = useState(movie || {})
-    const [movieToEdit, setMovieToEdit] = useState(movie)
-
-    function handleSubmit(e) {
-        e.preventDefault()
-        e.stopPropagation()
-        if (movie) {
-            saveEditMovie(movieToEdit)
-        } else {
-            postMovie(movieFormData)
-        }
-    }
-
-    function changeHandler(e) {
-        let name = e.target.name
-        let val = e.target.value
-        if (movie) {
-            setMovieToEdit({...movieToEdit, [name]: val})
-        } else {
-            setMovieFormData({...movieFormData, [name]: val})
-        }
-    }
-
-    function genresHandler(e) {
-        let name = e.target.name
-        let val = e.target.value
-        if (movie) {
-            setMovieToEdit({...movieToEdit, [name]: [val]})
-        } else {
-            setMovieFormData({...movieFormData, [name]: [val]})
-        }
-    }
-
-    function runtimeHandler(e) {
-        let name = e.target.name
-        let val = Number(e.target.value)
-        if (movie) {
-            setMovieToEdit({...movieToEdit, [name]: val})
-        } else {
-            setMovieFormData({...movieFormData, [name]: val})
-        }
-    }
 
     return (
-        <div>
-            <form onSubmit={handleSubmit}>
-                {movieToEdit &&
+        <Formik
+            initialValues={{
+                id: movie?.id || undefined,
+                title: movie?.title || '',
+                release_date: movie?.release_date || '',
+                poster_path: movie?.poster_path || '',
+                genres: movie?.genres || ["Drama"],
+                overview: movie?.overview || '',
+                runtime: movie?.runtime || ''
+            }}
+            validationSchema={Yup.object({
+                title: Yup.string()
+                    .max(25, 'Must be 25 characters or less')
+                    .required('Required'),
+                release_date: Yup.string()
+                    .max(10, 'Must be 10 characters or less')
+                    .required('Required'),
+                poster_path: Yup.string()
+                    .max(100, 'Must be 100 characters or less')
+                    .required('Required'),
+                overview: Yup.string()
+                    .max(400, 'Must be 400 characters or less')
+                    .required('Required'),
+                runtime: Yup.number().positive().integer().required('Required')
+            })}
+            onSubmit={(values, {setSubmitting}) => {
+                if (movie) {
+                    saveEditMovie(values)
+                } else {
+                    postMovie(values)
+                }
+                setSubmitting(false)
+            }}
+        >
+            <Form>
+                {movie &&
                 <>
                     <label className="modal-label">movie id</label>
-                    <input type="text" className="modal-input" id="movie_id" value={movieToEdit.id}
-                           onChange={changeHandler}/>
+                    <Field type="number" className="modal-input" name="id"/>
                 </>
                 }
-                <label className="modal-label">title</label>
-                <input type="text" className="modal-input" name="title" value={movieToEdit?.title}
-                       onChange={changeHandler}/>
+                <label htmlFor="title" className="modal-label">title</label>
+                <Field type="text" className="modal-input" name="title"/>
+                <ErrorMessage name="title"/>
+
                 <label className="modal-label">release date</label>
-                <input type="date" className="modal-input" name="release_date" value={movieToEdit?.release_date}
-                       onChange={changeHandler}/>
+                <Field type="date" className="modal-input" name="release_date"/>
+                <ErrorMessage name="release_date"/>
+
                 <label className="modal-label">url</label>
-                <input type="url" className="modal-input" name="poster_path" value={movieToEdit?.poster_path}
-                       onChange={changeHandler}/>
+                <Field type="url" className="modal-input" name="poster_path"/>
+                <ErrorMessage name="poster_path"/>
+
                 <label className="modal-label">genre</label>
-                <select className="modal-input" placeholder="Select genre" name="genres"
-                        onChange={genresHandler}>
+                <Field as="select" className="modal-input-select" placeholder="Select genre" name="genres"
+                       multiple={true}>
                     <option value="" disabled>Select genre</option>
-                    <option value="Drama" defaultValue>drama</option>
-                    <option value="Comedy">comedy</option>
-                    <option value="Documentary">documentary</option>
-                </select>
+                    <option value="Drama">Drama</option>
+                    <option value="Comedy">Comedy</option>
+                    <option value="Documentary">Documentary</option>
+                </Field>
+                <ErrorMessage name="genres"/>
+
                 <label className="modal-label">movie overview</label>
-                <input className="modal-input" type="text" name="overview" value={movieToEdit?.overview}
-                       onChange={changeHandler}/>
+                <Field className="modal-input" type="text" name="overview"/>
+                <ErrorMessage name="overview"/>
+
                 <label className="modal-label">runtime</label>
-                <input className="modal-input" type="number" name="runtime" value={movieToEdit?.runtime}
-                       onChange={runtimeHandler}/>
+                <Field className="modal-input" type="number" name="runtime"/>
+                <ErrorMessage name="runtime"/>
+
                 <div className="btn-wrapper display-flex">
                     <button className="btn btn-reset text-uppercase">reset</button>
                     <button type="submit" className="btn btn-submit text-uppercase">{buttonSubmitText}</button>
                 </div>
-            </form>
-        </div>
+            </Form>
+        </Formik>
     )
 }
 
