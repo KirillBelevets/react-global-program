@@ -2,14 +2,25 @@ import React, {useEffect} from 'react'
 import {connect} from "react-redux"
 import MovieItem from "./MovieItem"
 import ResultCount from "./ResultCount"
-import {bindActionCreators} from "redux";
-import {fetchMoviesDetails} from '../store/actions/index'
+import {bindActionCreators} from "redux"
+import {fetchMoviesDetails, getMoviesBySearch} from '../store/actions/index'
+import {useLocation, useParams} from "react-router-dom"
 
-function MovieList({headerState, setHeaderState, fetchMoviesDetails, movieList}) {
+function MovieList({fetchMoviesDetails, movieList, getMoviesBySearch}) {
+    let {searchValue} = useParams()
+    let location = useLocation()
 
     useEffect(() => {
-        fetchMoviesDetails();
+        if (movieList.length === 0) {
+            fetchMoviesDetails()
+        }
     }, [])
+
+    useEffect(() => {
+        if (location.pathname.includes('search/')) {
+            getMoviesBySearch(searchValue)
+        }
+    }, [location])
 
     return (
         <>
@@ -19,8 +30,6 @@ function MovieList({headerState, setHeaderState, fetchMoviesDetails, movieList})
                     <MovieItem
                         movie={movie}
                         key={movie.id}
-                        headerState={headerState}
-                        setHeaderState={setHeaderState}
                     />
                 ))}
             </div>
@@ -28,14 +37,14 @@ function MovieList({headerState, setHeaderState, fetchMoviesDetails, movieList})
     )
 }
 
-function mapStateToProps (state) {
+function mapStateToProps(state) {
     return {
         movieList: state.movies.movieList
     }
 }
 
-function mapDispatchToProps (dispatch) {
-    return bindActionCreators({fetchMoviesDetails: fetchMoviesDetails}, dispatch)
+function mapDispatchToProps(dispatch) {
+    return bindActionCreators({fetchMoviesDetails: fetchMoviesDetails, getMoviesBySearch: getMoviesBySearch}, dispatch)
 }
 
-export default connect (mapStateToProps, mapDispatchToProps)(MovieList)
+export default connect(mapStateToProps, mapDispatchToProps)(MovieList)

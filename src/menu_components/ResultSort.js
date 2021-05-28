@@ -1,5 +1,5 @@
 import React from 'react'
-import {moviesSortTypes} from '../common_components/App'
+import {moviesSortTypes} from './sortTypes'
 import {bindActionCreators} from "redux"
 import {sortBy} from "../store/actions"
 import {connect} from "react-redux"

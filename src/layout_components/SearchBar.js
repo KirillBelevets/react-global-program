@@ -1,9 +1,22 @@
-import React from 'react'
+import React, {useState} from 'react'
 import './header.scss'
-import SearchButton from "./SearchButton";
+import {useHistory} from "react-router-dom";
 
 
 const searchBar = () => {
+    const [searchValue, setSearchValue] = useState('')
+    const history = useHistory()
+
+    const searchHandler = (e) => {
+        let val = e.target.value
+        setSearchValue(val)
+    }
+
+    const submitHandler = () => {
+        if (searchValue.length > 0) {
+            history.push(`/search/${searchValue}`)
+        }
+    }
 
     return (
         <div className="search-bar-wrapper">
@@ -11,8 +24,13 @@ const searchBar = () => {
                 Find your movie
             </div>
             <div className="search-bar display-flex">
-                <input type="text" className="text-grey-2" placeholder="What do you want to watch?"/>
-                <SearchButton />
+                <input type="text" className="text-grey-2" placeholder="What do you want to watch?"
+                       onChange={searchHandler}/>
+                <div>
+                    <button type="submit" className="search-button text-uppercase cursor-pointer"
+                            onClick={submitHandler}>Search
+                    </button>
+                </div>
             </div>
         </div>
     )

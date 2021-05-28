@@ -1,6 +1,6 @@
 import React from 'react'
 import ReactDOM from 'react-dom'
-import App from './common_components/App'
+import App from './App'
 import {Provider} from "react-redux"
 import thunk from 'redux-thunk'
 import {allReducers} from './store/reducers'

@@ -1,36 +1,45 @@
 import React, {useEffect, useState} from 'react'
 import {connect} from "react-redux";
+import {useHistory, useParams} from "react-router-dom"
 
-function MovieDetails({headerState, setHeaderState, movieList}) {
-    const [currentDetails, setCurrentDetails] = useState({})
+function MovieDetails({movieList}) {
+    const [movieDetails, setMovieDetails] = useState({})
+
+    let {movieId} = useParams()
+    let history = useHistory()
+
+    const returnToSearch = () => {
+        history.push("/")
+    }
 
     useEffect(() => {
-        const movieIndex = movieList.findIndex(movie => {
-            return movie.id === headerState
-        })
-
-        return setCurrentDetails(movieList[movieIndex])
-    }, [headerState])
+        const movie = movieList.find(movie => (
+                movie.id === Number(movieId)
+            )
+        )
+        setMovieDetails(movie)
+    }, [movieId])
 
     return (
         <div className="movie-details text-white display-flex">
             <div className="movie-details-image">
-                <img src={currentDetails?.poster_path} alt="pic"/>
+                <img src={movieDetails?.poster_path} alt="pic"/>
             </div>
             <div className="movie-details-information-block">
                 <div className="movie-details-title">
-                    <span className="movie-details-title-card">{currentDetails?.title}</span>
-                    <span>   </span>
-                    <span className="movie-details-title-rating">{currentDetails?.vote_average}</span>
+                    <div className="movie-details-title-card">
+                        <span>{movieDetails?.title}</span>
+                        <div className="movie-details-genre">{movieDetails?.genres?.join(', ')}</div>
+                    </div>
+                    <span className="movie-details-title-rating">{movieDetails?.vote_average}</span>
                 </div>
-                <div className="movie-details-genre">{currentDetails?.genres}</div>
                 <div className="movie-details-info">
-                    <span className="movie-details-year">{currentDetails?.release_date}</span>
-                    <span className="movie-details-time">{currentDetails?.runtime}<span> min</span></span>
+                    <span className="movie-details-year">{movieDetails?.release_date}</span>
+                    <span className="movie-details-time">{movieDetails?.runtime}<span> min</span></span>
                 </div>
-                <div className="movie-details-description">{currentDetails?.overview}</div>
+                <div className="movie-details-description">{movieDetails?.overview}</div>
                 <div className="movie-details-btn-close">
-                    <button onClick={() => setHeaderState()}><i className="search icon"></i>
+                    <button onClick={returnToSearch}><i className="search icon"></i>
                     </button>
                 </div>
             </div>

@@ -59,7 +59,15 @@ export const filterByGenre = (genre) => {
 
 export const sortBy = (sortByValue) => {
     return async function (dispatch) {
-        const {data: {data}} = await axios.get('http://localhost:4000/movies', {params: {sortBy: sortByValue, sortOrder: "desc"}})
+        const {data: {data}} = await axios.get('http://localhost:4000/movies', {params: {sortBy: sortByValue, sortOrder: 'desc'}})
+
+        return dispatch(getMovies(data))
+    }
+}
+
+export const getMoviesBySearch = (searchVal) => {
+    return async function (dispatch) {
+        const {data: {data}} = await axios.get('http://localhost:4000/movies', {params: {search: searchVal, searchBy: 'title'}})
 
         return dispatch(getMovies(data))
     }
