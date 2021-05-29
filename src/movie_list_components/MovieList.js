@@ -5,6 +5,7 @@ import ResultCount from "./ResultCount"
 import {bindActionCreators} from "redux"
 import {fetchMoviesDetails, getMoviesBySearch} from '../store/actions/index'
 import {useLocation, useParams} from "react-router-dom"
+import NotFound from "./pages/NotFound";
 
 function MovieList({fetchMoviesDetails, movieList, getMoviesBySearch}) {
     let {searchValue} = useParams()
@@ -24,7 +25,10 @@ function MovieList({fetchMoviesDetails, movieList, getMoviesBySearch}) {
 
     return (
         <>
-            <ResultCount amount={movieList.length}/>
+            {
+                movieList.length === 0 ? <NotFound/> :
+                    <ResultCount amount={movieList.length}/>
+            }
             <div className="movie-list display-flex">
                 {movieList.map((movie) => (
                     <MovieItem

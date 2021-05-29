@@ -176,3 +176,34 @@
   padding-bottom: 3em;
   font-size: 7em;
 }
+
+.error {
+  text-align: center;
+  color: $white;
+  font-size: 7em;
+  background: $black;
+  width: 100%;
+
+  .logo {
+    font-size: 30px;
+    text-align: left;
+    padding-top: 30px;
+    padding-bottom: 30px;
+    padding-left: 30px;
+  }
+
+  &-label {
+    font-size: 40px;
+    padding-top: 100px;
+    padding-bottom: 150px;
+  }
+
+  .error-404 {
+    font-size: 100px;
+    padding-bottom: 100px;
+  }
+
+  .btn-go-back {
+    padding-bottom: 300px;
+  }
+}
