@@ -3,7 +3,7 @@ import './header.scss'
 import {useHistory} from "react-router-dom";
 
 
-const searchBar = () => {
+const SearchBar = () => {
     const [searchValue, setSearchValue] = useState('')
     const history = useHistory()
 
@@ -36,4 +36,4 @@ const searchBar = () => {
     )
 }
 
-export default searchBar
+export default SearchBar

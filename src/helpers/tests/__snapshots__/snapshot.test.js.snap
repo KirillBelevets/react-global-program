@@ -1,0 +1,32 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`App renders App snapshot 1`] = `
+<DocumentFragment>
+  <div
+    class="search-bar-wrapper"
+  >
+    <div
+      class="search-bar-label text-white text-uppercase"
+    >
+      Find your movie
+    </div>
+    <div
+      class="search-bar display-flex"
+    >
+      <input
+        class="text-grey-2"
+        placeholder="What do you want to watch?"
+        type="text"
+      />
+      <div>
+        <button
+          class="search-button text-uppercase cursor-pointer"
+          type="submit"
+        >
+          Search
+        </button>
+      </div>
+    </div>
+  </div>
+</DocumentFragment>
+`;
